@@ -35,7 +35,6 @@ import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
 import { usePoller } from "./hooks/usePoller";
 //@ts-ignore
 import confetti from "canvas-confetti";
-require("./Bg.css");
 const IMAGE_LINK = "/animation.gif";
 const LOGO_LINK = "/logo.png";
 
@@ -50,22 +49,34 @@ function throwConfetti(): void {
 const ConnectButton = styled(WalletDialogButton)`
   width: 100%;
   height: 60px;
-  margin-top: 10px;
   margin-bottom: 5px;
-  background: linear-gradient(29deg, #fe4a49 0%, #aeeeb2 100%);
-  color: #614014;
+  background: rgb(71, 67, 143);
+  background: linear-gradient(
+    56deg,
+    rgba(71, 67, 143, 1) 0%,
+    rgba(99, 103, 195, 1) 33%,
+    rgba(0, 255, 180, 1) 100%
+  );
+  color: #fff;
   font-size: 16px;
   font-weight: bold;
+  border-radius: 8px;
+  border: 1px solid white;
+  moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 `;
 
 const StyledPaper = styled(Paper)`
   padding: 20px;
-  background-color: #eed2ae;
+  background-color: black;
   border-radius: 6px;
   margin: 10px;
   -webkit-box-shadow: 8px 8px 71px 0px rgba(83, 66, 90, 1);
   -moz-box-shadow: 8px 8px 71px 0px rgba(83, 66, 90, 1);
   box-shadow: 8px 8px 71px 0px rgba(83, 66, 90, 1);
+  border: 1px solid white;
 `;
 const MintContainer = styled.div``; // add your owns styles here
 
@@ -78,7 +89,6 @@ export interface HomeProps {
 }
 
 const Home = (props: HomeProps) => {
-  const [animatedBg, setAnimatedBg] = useState(false);
   const [isUserMinting, setIsUserMinting] = useState(false);
   const [candyMachine, setCandyMachine] = useState<CandyMachineAccount>();
   const [alertState, setAlertState] = useState<AlertState>({
@@ -515,67 +525,21 @@ const Home = (props: HomeProps) => {
 
   return (
     <>
-      {animatedBg && (
-        <div className="section section--featured">
-          <div className="row-container">
-            <div className="line">
-              <div>
-                <div className="row">
-                  <img src="line-3-min.png" alt="" />
-                </div>
-                <div className="row">
-                  <img src="line-3-min.png" alt="" />
-                </div>
-              </div>
-            </div>
-
-            <div className="line second">
-              <div>
-                <div className="row">
-                  <img src="line-1-min.png" alt="" />
-                </div>
-                <div className="row">
-                  <img src="line-1-min.png" alt="" />
-                </div>
-              </div>
-            </div>
-            <div className="line third">
-              <div>
-                <div className="row">
-                  <img src="line-3-min.png" alt="" />
-                </div>
-                <div className="row">
-                  <img src="line-3-min.png" alt="" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="shadow">
-            <span></span>
-          </div>
-        </div>
-      )}
-      <Box style={{ minHeight: "100vh", display: "flex" }} alignItems="center">
-        <Container maxWidth="xs" style={{ position: "relative" }}>
+      <Box
+        style={{ display: "flex", flexDirection: "column" }}
+        alignItems="center"
+      >
+        <Container maxWidth="sm">
+          <img src={LOGO_LINK} alt="" width="100%" />
+        </Container>
+        <Container maxWidth="xs">
           <StyledPaper>
-            {" "}
             <img
-              src={LOGO_LINK}
+              src={IMAGE_LINK}
               alt=""
               width="100%"
               style={{ borderRadius: "5px" }}
-              onClick={() => setAnimatedBg(!animatedBg)}
             />
-          </StyledPaper>
-          <StyledPaper>
-            <div>
-              <img
-                src={IMAGE_LINK}
-                alt=""
-                width="100%"
-                style={{ borderRadius: "5px" }}
-              />
-            </div>
           </StyledPaper>
 
           <StyledPaper>
@@ -785,12 +749,23 @@ const Home = (props: HomeProps) => {
                 </MintContainer>
               </>
             )}
+
             <CrossmintPayButton
-    collectionTitle="Ape In OG Mint Pass"
-    collectionDescription="Ape In Poker OG Mint Pass"
-    collectionPhoto="https://arweave.net/z_Y1yzdukmOSPN_B4fe0hRt8B-YIUXJRUHnf4eKumVQ?ext=gif"
-    clientId="e88b7794-76d6-4fe4-8c24-722940c4d688"
-/>
+              style={{
+                margin: "auto",
+                width: "100%",
+                height: "60px",
+                borderRadius: "8px",
+                border: "1px solid white",
+                marginTop: "12px",
+                background:
+                  "linear-gradient(56deg, rgba(71, 67, 143, 1) 0%,rgba(99, 103, 195, 1) 33%, rgba(0, 255, 180, 1) 100% )",
+              }}
+              collectionTitle="Ape In OG Mint Pass"
+              collectionDescription="Ape In Poker OG Mint Pass"
+              collectionPhoto="https://arweave.net/z_Y1yzdukmOSPN_B4fe0hRt8B-YIUXJRUHnf4eKumVQ?ext=gif"
+              clientId="e88b7794-76d6-4fe4-8c24-722940c4d688"
+            />
           </StyledPaper>
         </Container>
 
