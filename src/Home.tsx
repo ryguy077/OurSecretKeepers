@@ -761,10 +761,28 @@ const Home = (props: HomeProps) => {
                 background:
                   "linear-gradient(56deg, rgba(71, 67, 143, 1) 0%,rgba(99, 103, 195, 1) 33%, rgba(0, 255, 180, 1) 100% )",
               }}
-              collectionTitle="Ape In OG Mint Pass"
-              collectionDescription="Ape In Poker OG Mint Pass"
+              collectionTitle="Ape In Genesis Players Cards"
+              collectionDescription="5,555 Ape In Genesis Players Cards. Reveal COMING SOON."
               collectionPhoto="https://arweave.net/z_Y1yzdukmOSPN_B4fe0hRt8B-YIUXJRUHnf4eKumVQ?ext=gif"
-              clientId="e88b7794-76d6-4fe4-8c24-722940c4d688"
+              clientId="ae2a5915-d7ef-46fb-a8d8-8109c063285b"
+              paymentMethod="fiat"
+            />
+            <CrossmintPayButton
+              style={{
+                margin: "auto",
+                width: "100%",
+                height: "60px",
+                borderRadius: "8px",
+                border: "1px solid white",
+                marginTop: "12px",
+                background:
+                  "linear-gradient(56deg, rgba(71, 67, 143, 1) 0%,rgba(99, 103, 195, 1) 33%, rgba(0, 255, 180, 1) 100% )",
+              }}
+              collectionTitle="Ape In Genesis Players Cards"
+              collectionDescription="5,555 Ape In Genesis Players Cards. Reveal COMING SOON."
+              collectionPhoto="https://arweave.net/z_Y1yzdukmOSPN_B4fe0hRt8B-YIUXJRUHnf4eKumVQ?ext=gif"
+              clientId="ae2a5915-d7ef-46fb-a8d8-8109c063285b"
+              paymentMethod="ETH"
             />
           </StyledPaper>
         </Container>
