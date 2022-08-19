@@ -324,7 +324,13 @@ const Home = (props: HomeProps) => {
     },
     [anchorWallet, props.candyMachineId, props.rpcHost]
   );
-
+  let pollTime;
+  usePoller(
+    () => {
+      refreshCandyMachineState();
+    },
+    pollTime ? pollTime : 9999
+  );
   const onMint = async (
     beforeTransactions: Transaction[] = [],
     afterTransactions: Transaction[] = []
