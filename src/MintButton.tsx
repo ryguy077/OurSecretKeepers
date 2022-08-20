@@ -70,7 +70,7 @@ export const MintButton = ({
       candyMachine?.state.isPresale ||
       candyMachine?.state.isWhitelistOnly
     ) {
-      return "Free Mint Chip";
+      return "WL Mint Chip Round";
     }
 
     return "MINT";

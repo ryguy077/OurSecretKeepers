@@ -616,7 +616,7 @@ const Home = (props: HomeProps) => {
                                 ? "COMPLETED"
                                 : isPresale
                                 ? "PRESALE"
-                                : "WL 17:00 UTC"
+                                : "LIVE"
                             }
                             onComplete={toggleMintButton}
                           />
