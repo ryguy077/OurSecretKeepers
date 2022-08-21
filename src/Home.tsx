@@ -750,7 +750,7 @@ const Home = (props: HomeProps) => {
               </>
             )}
 
-            {/* <CrossmintPayButton
+             <CrossmintPayButton
               style={{
                 margin: "auto",
                 width: "100%",
@@ -783,7 +783,7 @@ const Home = (props: HomeProps) => {
               collectionPhoto="https://arweave.net/z_Y1yzdukmOSPN_B4fe0hRt8B-YIUXJRUHnf4eKumVQ?ext=gif"
               clientId="ae2a5915-d7ef-46fb-a8d8-8109c063285b"
               paymentMethod="ETH"
-            /> */}
+            /> 
           </StyledPaper>
         </Container>
 
